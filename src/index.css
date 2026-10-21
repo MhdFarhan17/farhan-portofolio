@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design tokens: edit colours here, they flow through tailwind.config.js */
+:root {
+  --bg: 233 238 233;
+  --surface: 244 247 244;
+  --ink: 20 35 31;
+  --muted: 85 105 99;
+  --line: 200 212 205;
+  --accent: 15 118 110;
+  --sun: 196 138 20;
+}
+.dark {
+  --bg: 12 22 20;
+  --surface: 19 33 30;
+  --ink: 220 232 227;
+  --muted: 140 163 156;
+  --line: 36 56 51;
+  --accent: 79 209 197;
+  --sun: 236 190 80;
+}
+
+@layer base {
+  html { scroll-padding-top: 4.5rem; }
+  @media (prefers-reduced-motion: no-preference) {
+    html { scroll-behavior: smooth; }
+  }
+  body { @apply bg-bg font-sans text-ink antialiased transition-colors duration-300; }
+  h1, h2, h3 { @apply font-display tracking-tight; }
+  :focus-visible { @apply outline-2 outline-offset-2 outline-accent; outline-style: solid; }
+}
+
+@layer components {
+  .container-page { @apply mx-auto w-full max-w-6xl px-5 md:px-8; }
+  .tag { @apply rounded-full border border-line px-2.5 py-0.5 text-xs text-muted; }
+  .btn { @apply inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-colors; }
+  .btn-primary { @apply bg-accent text-bg hover:opacity-90; }
+  .btn-ghost { @apply border border-line text-ink hover:border-accent hover:text-accent; }
+}
