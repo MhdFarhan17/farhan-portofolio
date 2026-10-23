@@ -9,7 +9,7 @@ const links = [
 
 export default function Contact() {
   return (
-    <Section id="contact" title="Contact">
+    <Section id="contact" title="Contact" elev={3676}>
       <p className="max-w-xl text-lg text-muted">
         I am open to junior full-stack, mobile and IoT roles. Send me a message and I will reply as soon as I can.
       </p>

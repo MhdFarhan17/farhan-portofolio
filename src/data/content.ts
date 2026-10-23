@@ -13,7 +13,7 @@ export const profile = {
     "Outside code I led a student nature club, running expeditions and survival training where risk planning came first. I bring the same habits to software: clear plans, safe defaults, and a team that knows its role.",
   ],
   // TODO: replace with your real links.
-  email: "mfarhanst@proton.me",
+  email: "mfsn2806@gmail.com",
   github: "https://github.com/MhdFarhan17",
   linkedin: "https://www.linkedin.com/in/mdfarhann/",
 };
@@ -24,48 +24,6 @@ export const nav = [
   { id: "journey", label: "Journey" },
   { id: "skills", label: "Skills" },
   { id: "contact", label: "Contact" },
-];
-
-export interface Project {
-  title: string;
-  period: string;
-  summary: string;
-  highlights: string[];
-  stack: string[];
-  featured?: boolean;
-}
-
-export const projects: Project[] = [
-  {
-    title: "SmartKOI",
-    period: "Aug 2025 – Feb 2026",
-    featured: true,
-    summary:
-      "A mobile-first monitoring system for koi ponds. ESP32 sensors send readings to Firebase, and a Flutter app shows them live and warns the owner before water quality becomes a problem.",
-    highlights: [
-      "Live dashboard for temperature, pH, TDS, turbidity, battery level and actuator status",
-      "Push notifications through FCM when a reading crosses a safety limit or the battery runs low",
-      "Multi-device management with secure sign-in",
-      "Backend pipeline that bridges ESP32 microcontrollers and the Firebase database",
-    ],
-    stack: ["Flutter", "Dart", "Firebase", "FCM", "ESP32"],
-  },
-  {
-    title: "Scaffolding Rental Platform",
-    period: "Jun 2025 – Oct 2025",
-    summary:
-      "A company website for a construction rental business. Customers browse the catalog, build an order, and send it straight to WhatsApp as a ready-made invoice.",
-    highlights: ["Interactive product catalog", "Automatic invoice generation from selected items"],
-    stack: ["PHP", "JavaScript", "Tailwind CSS"],
-  },
-  {
-    title: "IoT Employee Attendance System",
-    period: "Mar 2024 – Jul 2024",
-    summary:
-      "A fingerprint attendance system from hardware to web. The device verifies identity on-site and the web dashboard records and shows the history.",
-    highlights: ["ESP32 with AS608 fingerprint module", "Admin dashboard, employee records and attendance logs"],
-    stack: ["PHP", "MySQL", "ESP32", "C++"],
-  },
 ];
 
 export interface Milestone {

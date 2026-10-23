@@ -3,7 +3,7 @@ import { awards, journey } from "../data/content";
 
 export default function Journey() {
   return (
-    <Section id="journey" title="Journey">
+    <Section id="journey" title="Journey" elev={2400}>
       <ol className="relative ml-2 border-l border-line">
         {journey.map((m) => (
           <li key={m.role} className="relative pb-10 pl-8 last:pb-0">

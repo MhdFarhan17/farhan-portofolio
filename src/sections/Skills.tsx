@@ -3,7 +3,7 @@ import { skills } from "../data/content";
 
 export default function Skills() {
   return (
-    <Section id="skills" title="Skills">
+    <Section id="skills" title="Skills" elev={3000}>
       <dl className="grid gap-10 sm:grid-cols-2">
         {Object.entries(skills).map(([group, items]) => (
           <div key={group}>

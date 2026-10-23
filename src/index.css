@@ -13,17 +13,19 @@
   --sun: 196 138 20;
 }
 .dark {
-  --bg: 12 22 20;
-  --surface: 19 33 30;
-  --ink: 220 232 227;
-  --muted: 140 163 156;
-  --line: 36 56 51;
+  --bg: 8 10 9;
+  --surface: 17 20 19;
+  --ink: 234 238 236;
+  --muted: 150 160 156;
+  --line: 38 43 41;
   --accent: 79 209 197;
   --sun: 236 190 80;
 }
 
 @layer base {
   html { scroll-padding-top: 4.5rem; }
+  @media (min-width: 1920px) { html { font-size: 112.5%; } }
+  @media (min-width: 2560px) { html { font-size: 137.5%; } }
   @media (prefers-reduced-motion: no-preference) {
     html { scroll-behavior: smooth; }
   }
@@ -33,9 +35,10 @@
 }
 
 @layer components {
-  .container-page { @apply mx-auto w-full max-w-6xl px-5 md:px-8; }
+  .container-page { @apply mx-auto w-full max-w-6xl px-5 md:px-8 2xl:max-w-[88rem]; }
   .tag { @apply rounded-full border border-line px-2.5 py-0.5 text-xs text-muted; }
-  .btn { @apply inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-colors; }
-  .btn-primary { @apply bg-accent text-bg hover:opacity-90; }
-  .btn-ghost { @apply border border-line text-ink hover:border-accent hover:text-accent; }
+  .btn { @apply inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]; }
+  .btn-primary { @apply bg-accent text-bg hover:shadow-lg hover:shadow-accent/30 hover:brightness-110; }
+  .btn-ghost { @apply border border-line text-ink hover:border-accent hover:bg-accent/10 hover:text-accent; }
+  .icon-btn { @apply grid h-9 w-9 place-items-center rounded-full border border-line text-ink transition-all duration-200 hover:border-accent hover:bg-accent/10 hover:text-accent active:scale-95; }
 }

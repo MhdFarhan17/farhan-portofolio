@@ -1,5 +1,6 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { nav, profile } from "../data/content";
 import { useScrollProgress } from "../hooks/useScrollProgress";
 import ThemeToggle from "./ThemeToggle";
@@ -14,19 +15,23 @@ export default function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-bg/85 backdrop-blur">
       <div className="container-page flex h-16 items-center justify-between gap-4">
-        <a href="#top" className="flex items-center gap-2.5 font-display text-lg font-semibold">
-          <img src="/favicon.svg" alt="" width={28} height={28} />
+        <Link to="/#top" className="group flex items-center gap-2.5 font-display text-lg font-semibold">
+          <img src="/favicon.svg" alt="" width={28} height={28} className="transition-transform duration-300 group-hover:-rotate-6" />
           <span>
             {profile.name.split(" ")[1]}
             <span className="text-accent">.</span>
           </span>
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-7 md:flex" aria-label="Main">
           {nav.map((n) => (
-            <a key={n.id} href={`#${n.id}`} className="text-sm text-muted transition-colors hover:text-ink">
+            <Link
+              key={n.id}
+              to={`/#${n.id}`}
+              className="relative text-sm text-muted transition-colors hover:text-ink after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all hover:after:w-full"
+            >
               {n.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -36,7 +41,7 @@ export default function Header() {
           </span>
           <ThemeToggle />
           <button
-            className="grid h-9 w-9 place-items-center rounded-full border border-line md:hidden"
+            className="icon-btn md:hidden"
             onClick={() => setOpen((o) => !o)}
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
@@ -49,9 +54,14 @@ export default function Header() {
       {open && (
         <nav className="container-page flex flex-col border-t border-line py-2 md:hidden" aria-label="Mobile">
           {nav.map((n) => (
-            <a key={n.id} href={`#${n.id}`} onClick={() => setOpen(false)} className="py-3 text-base">
+            <Link
+              key={n.id}
+              to={`/#${n.id}`}
+              onClick={() => setOpen(false)}
+              className="rounded-lg px-2 py-3 text-base transition-colors hover:bg-accent/10 hover:text-accent"
+            >
               {n.label}
-            </a>
+            </Link>
           ))}
         </nav>
       )}
